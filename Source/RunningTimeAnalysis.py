@@ -1,6 +1,7 @@
 import time
 import random as rd
 import matplotlib.pyplot as plt 
+import RabinKarp as rk
 
 MAX_N = int(1e5)
 MAX_M = int(1e3)
@@ -22,7 +23,7 @@ for i in range(10):
     naive.append(time.time() - start)
 
     start = time.time()
-    # insert Rabin-Karp algo here
+    rk.search(pat, txt, 3, 10)
     RK.append(time.time() - start)
 
     start = time.time()
@@ -30,7 +31,7 @@ for i in range(10):
     KMP.append(time.time() - start)
 
 plt.plot(test_set, naive, label = 'Naive')
-plt.plot(test_set, RK, label = 'Robin-Karp')
+plt.plot(test_set, RK, label = 'Rabin-Karp')
 plt.plot(test_set, KMP, label = 'KMP')
 
 plt.xlabel('n')
