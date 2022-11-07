@@ -2,6 +2,8 @@ import time
 import random as rd
 import matplotlib.pyplot as plt 
 import RabinKarp as rk
+import NaiveBruteForce as nv
+
 
 MAX_N = int(1e5)
 MAX_M = int(1e3)
@@ -19,7 +21,7 @@ for i in range(10):
     txt = [chr(rd.randint(65, 90)) for _ in range(n)]
 
     start = time.time()
-    # insert naive algo here
+    nv.search(pat, txt)
     naive.append(time.time() - start)
 
     start = time.time()
