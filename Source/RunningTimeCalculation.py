@@ -13,13 +13,25 @@ RK = []
 KMP = []
 
 # m = rd.randint(1, MAX_M)
-m = 10000
+m = 1000
 pat = [chr(rd.randint(65, 90)) for _ in range(m)]
 list_n = sorted([rd.randint(1, MAX_N) for _ in range(5)])
 list_txt = []
 
 for i in range(5): 
-    list_txt.append([chr(rd.randint(65, 90)) for _ in range(list_n[i])])
+    n = 0
+    k = 0
+    txt = ''
+    while n + m < list_n[i]:
+        if k:
+            txt += ''.join(pat)
+            n += m
+        else:
+            txt += ''.join(pat[0: m // 2])
+            n += m // 2
+        k = 1 - k
+    txt +=  ''.join([chr(rd.randint(65, 90)) for _ in range(list_n[i] - n)])
+    list_txt.append(txt)
 
 for i in range(5):
     start = time()

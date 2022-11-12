@@ -1,7 +1,7 @@
 def search(pat, txt):
     M = len(pat)
     N = len(txt)
-
+    res = []
     for i in range(N - M + 1):
         j = 0
         while (j < M):
@@ -10,7 +10,8 @@ def search(pat, txt):
             j += 1
 
         if (j == M):
-            print("Pattern found at index ", i)
+            res.append(i)  
+    return res
 
 
 if __name__ == '__main__':

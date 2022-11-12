@@ -51,8 +51,8 @@ def KMP(txt, pat):
                 i += 1
             else:
                 j = lps[j - 1]
+    return res
     
-
 def main():
     text = 'AABAACAADAABAABA'
     pattern = 'AABA'

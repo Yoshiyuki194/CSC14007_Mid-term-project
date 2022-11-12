@@ -5,6 +5,7 @@ def search(pattern, text, q, d):
     p = 0
     t = 0
     h = 1
+    res = []
     for i in range(0, m - 1):
         h = (h * d) % q
     for a in range(0, m):
@@ -18,14 +19,14 @@ def search(pattern, text, q, d):
                     is_found = False
                     break
             if is_found is True:
-                print("Pattern is found at position: " + str(b + 1))
+                res.append(b + 1)
                 break
         if b < n - m:
             t = (d*(t-ord(text[b])*h) + ord(text[b+m])) % q
             if t < 0:
                 t = t + q
 
-    return -1
+    return res
 
 
 def main():
