@@ -34,7 +34,8 @@ def KMP(txt, pat):
 
     res = []
 
-    while i < n:
+    # loop till text's remaining length smaller than pattern's
+    while (n - i) >= (m - j):
         if txt[i] == pat[j]:
             i += 1
             j += 1
@@ -53,8 +54,8 @@ def KMP(txt, pat):
     return res
     
 def main():
-    text = 'AABAACAADAABAABA'
-    pattern = 'AABA'
+    text = "AABAACAADAABAABA"
+    pattern = "AABA"
     
     #print("Found pattern at indices: ")
     
