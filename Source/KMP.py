@@ -32,7 +32,9 @@ def KMP(txt, pat):
     i, j = 0, 0 # iterators for txt and pat
     n = len(txt)
     m = len(pat)
-    
+
+    res = []
+
     while i < n:
         if txt[i] == pat[j]:
             i += 1
@@ -40,7 +42,7 @@ def KMP(txt, pat):
         
         # if find pattern
         if j == m:
-            print(i - m)
+            res.append(i - m)
             j = lps[j - 1]
             
         elif txt[i] != pat[j] and i < n:
