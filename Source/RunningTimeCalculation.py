@@ -6,14 +6,13 @@ import NaiveBruteForce as nv
 import KMP as kmp
 
 MAX_N = int(1e7)
-MAX_M = int(1e5)
 
 naive = []
 RK = []
 KMP = []
 
 # m = rd.randint(1, MAX_M)
-m = 1000
+m = 100
 pat = [chr(rd.randint(65, 90)) for _ in range(m)]
 list_n = sorted([rd.randint(1, MAX_N) for _ in range(5)])
 list_txt = []
@@ -54,8 +53,8 @@ plt.xlabel(f'N (M = {m})')
 plt.ylabel('time (seconds)')
 
 plt.legend()
+plt.savefig('../plot.png', dpi = 300, bbox_inches = 'tight')
 plt.show()
-plt.savefig('plot.png', dpi = 300, bbox_inches = 'tight')
 
 
 
