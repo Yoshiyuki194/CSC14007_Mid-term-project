@@ -5,14 +5,14 @@ import RabinKarp as rk
 import NaiveBruteForce as nv
 import KMP as kmp
 
-MAX_N = int(1e7)
+MAX_N = int(1e8)
 
 naive = []
 RK = []
 KMP = []
 
 # m = rd.randint(1, MAX_M)
-m = 100
+m = 1000
 pat = [chr(rd.randint(65, 90)) for _ in range(m)]
 list_n = sorted([rd.randint(1, MAX_N) for _ in range(5)])
 list_txt = []
@@ -26,7 +26,7 @@ for i in range(5):
             txt += ''.join(pat)
             n += m
         else:
-            txt += ''.join(pat[0: m // 2])
+            txt += ''.join(pat[:-1])
             n += m // 2
         k = 1 - k
     txt +=  ''.join([chr(rd.randint(65, 90)) for _ in range(list_n[i] - n)])
@@ -53,7 +53,7 @@ plt.xlabel(f'N (M = {m})')
 plt.ylabel('time (seconds)')
 
 plt.legend()
-plt.savefig('../plot.png', dpi = 300, bbox_inches = 'tight')
+plt.savefig('plot.png')
 plt.show()
 
 

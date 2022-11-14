@@ -59,8 +59,8 @@ def main():
     
     #print("Found pattern at indices: ")
     
-    KMP(text, pattern)
-    
+    for u in KMP(text, pattern):
+        print(u)
 
 if __name__ == '__main__':
     main()
