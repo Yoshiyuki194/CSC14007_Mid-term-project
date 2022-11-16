@@ -20,7 +20,6 @@ def search(pattern, text, q, d):
                     break
             if is_found is True:
                 res.append(b + 1)
-                break
         if b < n - m:
             t = (d*(t-ord(text[b])*h) + ord(text[b+m])) % q
             if t < 0:
